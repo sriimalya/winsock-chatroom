@@ -26,8 +26,6 @@ This project implements a basic **chatroom** application using **C++ socket prog
 - **ReceiveMsg()**: Receives messages from the server and displays them.
 - **main()**: Establishes a connection to the server and starts the chat threads.
 
-
-
 ## OS and Networking Concepts Used
 1. **Multithreading**:  
    - Each client connection is handled by a separate thread, ensuring concurrent communication.  
@@ -39,6 +37,17 @@ This project implements a basic **chatroom** application using **C++ socket prog
 3. **Socket Programming**:  
    - Uses **Winsock** for socket creation, binding, and communication between server and clients.
    - Sockets are provided by the OS as an interface to the networking stack.
+
+## UML Diagrams
+
+### 1. Server Workflow Diagram
+![Server Workflow Diagram](./ChatroomUML.png)
+
+### 2. Client-Server Interaction Diagram
+![Client-Server Interaction Diagram](./ChatAppUML.png)
+   
+
+
 
 ## How to Run
 ### Prerequisites:
