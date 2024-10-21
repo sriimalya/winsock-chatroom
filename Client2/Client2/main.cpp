@@ -24,12 +24,12 @@ bool Initialize() {
 	return WSAStartup(MAKEWORD(2, 2), &data) == 0;
 }
 
-void SendMsg(SOCKET s, const string& name) {
+void SendMsg(SOCKET s) {
 	string message;
 
 	while (1) {
 		getline(cin, message);
-		string msg = name + ":" + message;
+		string msg = message;
 		int bytesent = send(s, msg.c_str(), msg.length(), 0);
 		if (bytesent == SOCKET_ERROR) {
 			cout << "message sending failed" << endl;
@@ -59,6 +59,7 @@ void ReceiveMsg(SOCKET s) {
 			cout << receivedMsg << endl;
 
 		}
+
 	}
 	closesocket(s);
 	WSACleanup();
@@ -101,12 +102,12 @@ int main() {
 	cout << "connection with server established" << endl;
 
 	// Send the client's name to the server
-	cout << "enter your chat name: " << endl;
+	cout << "Enter your chat name: " << endl;
 	string name;
 	getline(cin, name);
-	send(s, name.c_str(), name.length(), 0);  
+	send(s, name.c_str(), name.length(), 0);  // Send name first
 
-	thread senderThread(SendMsg, s, name);
+	thread senderThread(SendMsg, s);
 	thread recieverThread(ReceiveMsg, s);
 
 	senderThread.join();
