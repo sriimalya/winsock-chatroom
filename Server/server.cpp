@@ -1,6 +1,7 @@
 #include<iostream>
 #include<WinSock2.h>
 #include<WS2tcpip.h>
+#include<algorithm>
 #include<tchar.h>
 #include<thread>
 #include<vector>
@@ -55,6 +56,9 @@ void InteractWithClient(SOCKET clientSocket, vector<SOCKET>& clients, mutex& mtx
 		string message(buffer, bytesrecvd);
 		cout << "message from "<< clientName<< " : " << message << endl;
 
+     // Prepend the client's name to the message
+     string messageWithSender = clientName + ": " + message;
+
 		// Lock the mutex for sending messages to prevent concurrent access
 		{
 			lock_guard<mutex> lock(mtx);
@@ -62,7 +66,7 @@ void InteractWithClient(SOCKET clientSocket, vector<SOCKET>& clients, mutex& mtx
 			for (auto client : clients) {
 				//to prevent fwdng the message the same client itself
 				if (client != clientSocket) {
-					send(client, message.c_str(), message.length(), 0);
+					send(client, messageWithSender.c_str(), messageWithSender.length(), 0);
 				}
 			}
 		} // Mutex is automatically unlocked when the lock_guard goes out of scope
