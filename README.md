@@ -47,27 +47,41 @@ This project implements a basic **chatroom** application using **C++ socket prog
 ![Client-Server Interaction Diagram](./ChatAppUML.png)
    
 
-
-
 ## How to Run
 ### Prerequisites:
 - **Windows OS** with Visual Studio (or any compatible C++ compiler).
 - Winsock library installed (default with Visual Studio).
 
 ### Steps to Run:
-1. **Compile and run the server**:
-   ```bash
-   g++ -o server server.cpp -lws2_32
-   ./server
-2. **Compile and run multiple clients (each in a new terminal)**:
-   ```bash
-   g++ -o client client.cpp -lws2_32
-   ./client
-3. **Test the chatroom**:
-   - When prompted, enter the client's chat name.
-   - Exchange messages between clients connected to the same server.
 
+1. **Clone the repository**:
+   ```bash
+   git clone https://github.com/sriimalya/winsock-chatroom.git
+   cd winsock-chatroom
+2. **Compile the server**: Navigate to the bin/ directory and compile the server.cpp file:
+   ```bash
+   g++ -o bin/Server.exe Server/server.cpp -lws2_32
 
+3. **Compile the Client**: Similarly, compile the client.cpp file:
+   ```bash
+   g++ -o bin/Client.exe Client/client.cpp -lws2_32
+   
+   Note: To connect multiple clients, open a new Command Prompt window for each client you want to connect to the server.
+   
+4. **Run the server**: Open a new Command Prompt window and navigate to the bin directory of the project and run the Server:
+   ```bash
+   cd bin
+   Server.exe
+   
+5. **Run the Client**: Open another terminal or command prompt, and again navigate to the bin directory:
+   ```bash
+   cd bin
+   Client.exe
+   
+6. **Test the chatroom**:
+   - In each client terminal, you will be prompted to enter a chat name.
+   - Start exchanging messages between clients connected to the same server.
+   
 
 ## Limitations
 
