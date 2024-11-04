@@ -68,13 +68,15 @@ This project implements a basic **chatroom** application using **C++ socket prog
    
    Note: To connect multiple clients, open a new Command Prompt window for each client you want to connect to the server.
    
-4. **Run the server**: From the bin/ directory, execute the server:
+4. **Run the server**: Open a new Command Prompt window and navigate to the bin directory of the project and run the Server:
    ```bash
-   bin/Server.exe
+   cd bin
+   Server.exe
    
-5. **Run the Client**: In each Command Prompt window where you want to connect a client, run:
+5. **Run the Client**: Open another terminal or command prompt, and again navigate to the bin directory:
    ```bash
-   bin/Client.exe
+   cd bin
+   Client.exe
    
 6. **Test the chatroom**:
    - In each client terminal, you will be prompted to enter a chat name.
