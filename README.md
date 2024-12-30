@@ -100,6 +100,9 @@ This project implements a basic **chatroom** application using **C++ socket prog
 5. **WebSocket Support**: Make the chatroom accessible from web browsers using WebSocket protocols.
 
 
+## Project Screenshots
+
+![Server connected with three clients](./Chat App.png)
 
 
 
