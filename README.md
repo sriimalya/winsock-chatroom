@@ -102,8 +102,8 @@ This project implements a basic **chatroom** application using **C++ socket prog
 
 ## Project Screenshots
 
-![Server connected with three clients](./Chat App.png)
-
+### Server connected with three clients
+![Server connected with three clients](./ChatApp.png)
 
 
 
